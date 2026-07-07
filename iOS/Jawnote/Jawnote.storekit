@@ -1,0 +1,40 @@
+{
+  "identifier" : "Jawnote",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {},
+  "subscriptionGroups" : [
+    {
+      "id" : "jawnote_pro_group",
+      "localizations" : [],
+      "name" : "Jawnote Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "jawnote_pro_monthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlocks Weekly severity trend and stress-day correlation",
+              "displayName" : "Jawnote Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.grindinglog.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Jawnote Pro Monthly",
+          "subscriptionGroupID" : "jawnote_pro_group",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

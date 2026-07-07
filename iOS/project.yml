@@ -1,0 +1,75 @@
+name: Jawnote
+options:
+  bundleIdPrefix: com.shimondeitel.grindinglog
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Jawnote:
+    type: application
+    platform: iOS
+    sources:
+      - path: Jawnote
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.grindinglog
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Jawnote/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  JawnoteTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: JawnoteTests
+      - path: Jawnote.storekit
+    dependencies:
+      - target: Jawnote
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.grindinglog.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  JawnoteUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: JawnoteUITests
+    dependencies:
+      - target: Jawnote
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.grindinglog.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Jawnote:
+    build:
+      targets:
+        Jawnote: all
+        JawnoteTests: [test]
+        JawnoteUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Jawnote.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Jawnote.storekit
+      targets:
+        - JawnoteTests
+        - JawnoteUITests
+    archive:
+      config: Release
